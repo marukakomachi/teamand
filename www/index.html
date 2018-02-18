@@ -4,9 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <script src="components/loader.js"></script>
+    <script src="js/dbtest.js"></script>
     <link rel="stylesheet" href="components/loader.css">
     <link rel="stylesheet" href="css/style.css">
+    <script 
     <script>
+        (function() {
+          document.addEventListener("deviceready", onDeviceReady, false);
+        });
+        
         ons.bootstrap()
         ons.disableAutoStatusBarFill();  // (Monaca enables StatusBar plugin by default)
         
@@ -23,9 +29,6 @@
                // mySwitch.isChecked()
            // );
         //};
-        
-        
-        
         
     </script>
 </head>
@@ -50,6 +53,9 @@
                     </ons-row>
                 </div>
             </p>
+            <div class="test">
+                <ons-button onclick="myNavigator.pushPage('dbtest.html',{animation:'slide'})" modifier="large--cta" >DB TEST</ons-button>
+            </div>
     </ons-navigator>
 
 </body>
