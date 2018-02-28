@@ -10,13 +10,14 @@
     <script>
         //ons.bootstrap()
         ons.bootstrap("myApp", []);
-        
     </script>
     <script src="js/services/db.js"></script>
     <script src="js/db-tables/base-table.js"></script>
     <script src="js/db-tables/recipe.js"></script>
     <script src="js/db-tables/trouble.js"></script>
+    <script src="js/db-tables/food-item.js"></script>
     <script src="js/db-tables/relation-rec-tro.js"></script>
+    <script src="js/db-tables/relation-tro-fitem.js"></script>
     <script src="js/controllers/recipe-list.js"></script>
     <script src="js/controllers/recipe-detail.js"></script>
     <script src="js/controllers/trouble-detail.js"></script>
@@ -31,22 +32,18 @@
         </div>
             <br><br>
         <p>
-            <div class="choice">
-                <ons-row>
-                    <ons-col width="50%" align="center">
-                        <div class="choice">
-                            <ons-button onclick="myNavigator.pushPage('recipe-list.html',{animation:'slide'})" 
-                                        modifier="large--cta" >男性</ons-button>
-                        </div>
-                    </ons-col>
-                    <ons-col width="50%" align="center">
-                        <div class="choice">
-                            <ons-button modifier="large--cta">女性</ons-button>
-                        </div>
-                    </ons-col>
-                </ons-row>
-            </div>
+            <ons-row>
+                <ons-col  align="center">
+                    <div class="choice"
+                        onclick="myNavigator.pushPage('recipe-list.html',{animation:'slide'})" 
+                        modifier="large--cta" >
+                        <a href="#" class="btn">start</a>
+                        
+                    </div>
+                </ons-col>
+            </ons-row>
         </p>
+        
     </ons-navigator>
 
 </body>

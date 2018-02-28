@@ -1,24 +1,25 @@
 <ons-page id="recipe-detail" ng-controller="RecipeDetailController">
 
-  <ons-toolbar>
+  <ons-toolbar modifier="transparent">
     <div class="left">
       <ons-back-button>Back</ons-back-button>
     </div>
     <div class="center">食の知見</div>
   </ons-toolbar>
 
+  <div class="content">
   <ons-list modifier="inset" style="margin-top: 10px">
     <ons-list-item class="item">
       <ons-row>
-        <ons-col width="60px">
-          <div class="item-thum">
-            <img src="{{data.imgPath}}">  
-          </div>
+        <ons-col width="100%">
+          <!--<div class="recipe-img">-->
+            <img src="{{data.fullimgPath}}" width="99%">  
+          <!--</div>-->
         </ons-col>
-        <ons-col>
+        <ons-col width="100%">
           <header>
-            <span class="item-title">{{data.name}}</span>
-            <span class="item-label">食癒効果：{{data.effect}}</span>
+            <p><div class="recipe-title">{{data.name}}</div></p>
+            <span class="recipe-syokuyu">食癒効果：{{data.effect}}</span>
           </header>
           <p class="item-desc">{{data.knowledge}}</p>
         </ons-col>
@@ -32,5 +33,7 @@
       {{tag.col_name}}
     </ons-list-item>
   </ons-list>
-
+  </div>
+  
+  <link rel="stylesheet" href="css/recipe-detail.css">
 </ons-page>

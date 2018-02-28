@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "fitem_id": 1,
+        "trouble_id": 1
+    },
+    {
+        "id": 2,
+        "fitem_id": 2,
+        "trouble_id": 2
+    },
+    {
+        "id": 3,
+        "fitem_id": 3,
+        "trouble_id": 3
+    },
+    {
+        "id": 4,
+        "fitem_id": 4,
+        "trouble_id": 4
+    },
+    {
+        "id": 5,
+        "fitem_id": 5,
+        "trouble_id": 5
+    },
+    {
+        "id": 6,
+        "fitem_id": 6,
+        "trouble_id": 6
+    },
+    {
+        "id": 7,
+        "fitem_id": 7,
+        "trouble_id": 7
+    },
+    {
+        "id": 8,
+        "fitem_id": 8,
+        "trouble_id": 8
+    }
+]

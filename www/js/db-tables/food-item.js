@@ -1,9 +1,9 @@
-// テーブル：レシピ
-var RecipeCls = (function () {
+// テーブル：悩み
+var FoodItemCls = (function () {
     // コンストラクタ
-    function RecipeCls(id, name, knowledge, effect, imgPath, fullimgPath) {
+    function FoodItemCls(id, name, knowledge, effect, imgPath, fullimgPath) {
         // 親クラスのコンストラクタ呼び出し
-        BaseTableCls.call(this, "recipe", id);
+        BaseTableCls.call(this, "fitem", id);
 
         // カラム
         this.col_name = name;
@@ -14,8 +14,8 @@ var RecipeCls = (function () {
     }
 
     // configure prototype
-    RecipeCls.prototype = new BaseTableCls();
-    RecipeCls.prototype.constructor = RecipeCls;
+    FoodItemCls.prototype = new BaseTableCls();
+    FoodItemCls.prototype.constructor = FoodItemCls;
 
-    return RecipeCls; // return constructor
+    return FoodItemCls; // return constructor
 })();

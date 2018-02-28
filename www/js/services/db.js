@@ -9,7 +9,9 @@ app.service('MyDBService',
     var TABLES = [
             new RecipeCls(),
             new TroubleCls(),
-            new RelationRecTroCls()
+            new RelationRecTroCls(),
+            new FoodItemCls(),
+            new RelationTroFItemCls()
         ];
         
     // 初期化時に登録するデータ
@@ -17,19 +19,31 @@ app.service('MyDBService',
     // レシピデータ
     $http.get("table-data/recipes.json").then(function(response){
         response.data.forEach(function(data) {
-            INITIALIZE.push(new RecipeCls(data.id, data.name, data.knowledge, data.effect, data.imgPath));    
+            INITIALIZE.push(new RecipeCls(data.id, data.name, data.knowledge, data.effect, data.imgPath, data.fullimgPath));    
         });
     });
     // 悩みデータ
     $http.get("table-data/troubles.json").then(function(response){
         response.data.forEach(function(data) {
-            INITIALIZE.push(new TroubleCls(data.id, data.name, data.knowledge, data.effect, data.imgPath));    
+            INITIALIZE.push(new TroubleCls(data.id, data.name, data.knowledge, data.effect, data.imgPath, data.fullimgPath));    
         });
     });
     // リレーションデータ
     $http.get("table-data/relation-rec-tro.json").then(function(response){
         response.data.forEach(function(data) {
             INITIALIZE.push(new RelationRecTroCls(data.id, data.recipe_id, data.trouble_id));    
+        });
+    });
+    // 食アイテムデータ
+    $http.get("table-data/food-items.json").then(function(response){
+        response.data.forEach(function(data) {
+            INITIALIZE.push(new FoodItemCls(data.id, data.name, data.knowledge, data.effect, data.imgPath, data.fullimgPath));    
+        });
+    });
+    // リレーションデータ
+    $http.get("table-data/relation-tro-fitem.json").then(function(response){
+        response.data.forEach(function(data) {
+            INITIALIZE.push(new RelationTroFItemCls(data.id, data.fitem_id, data.trouble_id));    
         });
     });
 
@@ -194,11 +208,12 @@ app.service('MyDBService',
             db.readTransaction(
                 function(tx){
 
-                    var sql = 'SELECT a.col_id        as id \
-                                    , a.col_name      as name \
-                                    , a.col_effect    as effect \
-                                    , a.col_knowledge as knowledge \
-                                    , a.col_imgPath   as imgPath \
+                    var sql = 'SELECT a.col_id          as id \
+                                    , a.col_name        as name \
+                                    , a.col_effect      as effect \
+                                    , a.col_knowledge   as knowledge \
+                                    , a.col_imgPath     as imgPath \
+                                    , a.col_fullimgPath as fullimgPath \
                                     , group_concat(b.col_tag) as tags\
                                  FROM ' + mainTable.table_name + ' a \
                                  LEFT OUTER JOIN ' + relationTable.table_name + ' r \

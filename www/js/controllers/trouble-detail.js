@@ -16,8 +16,8 @@ app.controller('TroubleDetailController',
             function(db) {
                 console.log("GET ALL KNOWLEDGE : " + target.col_name);
                 var mainTable = new TroubleCls(target.col_id);
-                var subTable = new RecipeCls();
-                var relationTable = new RelationRecTroCls();
+                var subTable = new FoodItemCls();
+                var relationTable = new RelationTroFItemCls();
                 return MyDBService.getAllKnowledge(db, mainTable, subTable, relationTable);
             }
         ).then(
@@ -25,6 +25,8 @@ app.controller('TroubleDetailController',
                 // 検索結果を画面に設定する（１件のはず）
                 $scope.data = resultList[0];
                 $scope.data.tagList = [];
+                
+                //console.log("DATA : " + JSON.stringify($scope.data));
                 
                 var tagInfos = $scope.data.tags.split(",");
                 tagInfos.forEach(function(tagInfo){
@@ -40,4 +42,22 @@ app.controller('TroubleDetailController',
         AnswerData.set(recipe_data);
         myNavigator.pushPage('recipe-detail.html');
     }
+
+    // ダイアログ
+    $scope.showDialog = function(dlg) {
+      ons.createDialog(dlg, {parentScope: $scope}).then(function(dialog) {
+              
+        dialog.on("preshow", function(e) {
+          document.getElementById('food-item').textContent = $scope.data.tagList[0].col_name;
+          document.getElementById('food-effect').textContent = $scope.data.effect;
+        })
+          
+        dialog.on("posthide", function(e) {
+          e.dialog.destroy();
+        }); 
+              
+         dialog.show();
+      });
+    };
+        
 }]);

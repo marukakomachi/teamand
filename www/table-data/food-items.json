@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "name": "今日の水　山のミネラルウォーター",
+        "effect": "",
+        "knowledge": "",
+        "imgPath": "",
+        "fullimgPath": ""
+    },
+    {
+        "id": 2,
+        "name": "住んでいる土地のお米",
+        "effect": "",
+        "knowledge": "",
+        "imgPath": "",
+        "fullimgPath": ""
+    },
+    {
+        "id": 3,
+        "name": "親の本籍地の天日塩",
+        "effect": "",
+        "knowledge": "",
+        "imgPath": "",
+        "fullimgPath": ""
+    },
+    {
+        "id": 4,
+        "name": "開店直後の特売野菜料理",
+        "effect": "",
+        "knowledge": "",
+        "imgPath": "",
+        "fullimgPath": ""
+    },
+    {
+        "id": 5,
+        "name": "伝統的な食材",
+        "effect": "",
+        "knowledge": "",
+        "imgPath": "",
+        "fullimgPath": ""
+    },
+    {
+        "id": 6,
+        "name": "グラニュー糖から黒砂糖に変える",
+        "effect": "",
+        "knowledge": "",
+        "imgPath": "",
+        "fullimgPath": ""
+    },
+    {
+        "id": 7,
+        "name": "生産者の顔写真のついた食材",
+        "effect": "",
+        "knowledge": "",
+        "imgPath": "",
+        "fullimgPath": ""
+    },
+    {
+        "id": 8,
+        "name": "朝採れキュウリ",
+        "effect": "",
+        "knowledge": "",
+        "imgPath": "",
+        "fullimgPath": ""
+    }
+]

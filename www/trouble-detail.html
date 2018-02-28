@@ -1,34 +1,33 @@
-<ons-page id="recipe-detail" ng-controller="TroubleDetailController">
+<ons-page id="trouble-detail" ng-controller="TroubleDetailController">
 
-  <ons-toolbar>
-    <div class="left">
-      <ons-back-button>Back</ons-back-button>
-    </div>
+  <ons-toolbar modifier="transparent" fixed-style>
+    <div class="left"><ons-back-button></ons-back-button></div>
     <div class="center">食の知見（料理法）</div>
+    <div class="right">
+      <ons-toolbar-button>
+        <ons-icon style="color: blue" icon="ion-more"></ons-icon>
+      </ons-toolbar-button>
+    </div>
   </ons-toolbar>
 
-  <ons-list modifier="inset" style="margin-top: 10px">
-    <ons-list-item class="item">
-      <ons-row>
-        <ons-col width="60px">
-          <div class="item-thum"></div>
-        </ons-col>
-        <ons-col>
-          <header>
-            <span class="item-title">{{data.name}}</span>
-            <span class="item-label">食癒効果：{{data.effect}}</span>
-          </header>
-          <p class="item-desc">{{data.knowledge}}</p>
-        </ons-col>
-      </ons-row>
-    </ons-list-item>
+  <div class="content">
+ 
+    <div class="title">{{data.name}}</div>
+    <div class="description">{{data.knowledge}}</div>
+    <div class="effect_btn" ng-click="showDialog('food-effect-dialog.html')">食癒効果</div>
+  
+    <figure>
+      <img class="related_img" src="{{data.imgPath}}">
+    </figure>
+            
+  </div>
+  
+  <div class="choice"
+    onclick="myNavigator.resetToPage('index.html',{animation:'slide'})" 
+    modifier="large--cta" >
+    <a href="#" class="btn">Top</a>
+  </div>
 
-    <ons-list-item modifier="chevron" id="add-note-action" 
-        ng-repeat="tag in data.tagList"
-        ng-click="showRecipeDetailPage(tag)">
-      <ons-icon icon="ion-chatboxes" fixed-width="true" style="color: #ccc"></ons-icon>
-      {{tag.col_name}}
-    </ons-list-item>
-  </ons-list>
-
+  <link rel="stylesheet" href="css/trouble-detail.css">
+  
 </ons-page>
